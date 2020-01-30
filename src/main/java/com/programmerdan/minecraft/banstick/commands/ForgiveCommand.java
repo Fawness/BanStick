@@ -29,7 +29,6 @@ public class ForgiveCommand implements CommandExecutor {
 
 	public static String name = "forgive";
 	
-	@SuppressWarnings("deprecation")
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String cmdString, String[] arguments) {
 		if (arguments.length < 1) return false;

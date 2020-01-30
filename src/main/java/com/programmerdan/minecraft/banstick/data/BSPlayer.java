@@ -297,6 +297,7 @@ public class BSPlayer {
 	 * @param player The player object to use
 	 * @return the BSPlayer created from the player, or null
 	 */
+	@SuppressWarnings("unlikely-arg-type")
 	public static BSPlayer create(final Player player) {
 		if (allPlayersUUID.containsKey(player.getUniqueId())) {
 			return allPlayersUUID.get(player);

@@ -14,7 +14,6 @@ import vg.civcraft.mc.civmodcore.ACivMod;
 
 public class BanStick extends ACivMod {
 	private static BanStick instance;
-	private BanStickCommandHandler commandHandler;
 	private BanStickEventHandler eventHandler;
 	private BanStickDatabaseHandler databaseHandler;
 	private BanStickTorUpdater torUpdater;
@@ -92,7 +91,7 @@ public class BanStick extends ACivMod {
 	private void registerCommandHandler() {
 		if (!this.isEnabled()) return;
 		try {
-			this.commandHandler = new BanStickCommandHandler(getConfig());
+			new BanStickCommandHandler(getConfig());
 		} catch (Exception e) {
 			this.severe("Failed to set up command handling", e);
 			this.setEnabled(false);

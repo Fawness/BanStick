@@ -107,11 +107,7 @@ public class IpCheckImportWorker extends ImportWorker {
 					int thisCycle = 0;
 					while (rs.next()) {
 						String ip = rs.getString(1);
-						Timestamp firstUse = rs.getTimestamp(2);
 						boolean isBanned = rs.getBoolean(3);
-						boolean isJoinExempt = rs.getBoolean(4);
-						boolean isWarnExempt = rs.getBoolean(5);
-						
 						try {
 							IPAddressString address = new IPAddressString(ip);
 							IPAddress exactAddress = address.toAddress();
@@ -166,11 +162,8 @@ public class IpCheckImportWorker extends ImportWorker {
 					int thisCycle = 0;
 					while (rs.next()) {
 						String username = rs.getString(1);
-						Timestamp firstJoin = rs.getTimestamp(2);
-						String banMessage = rs.getString(3);
 						boolean isBanned = rs.getBoolean(4);
 						boolean isJoinExempt = rs.getBoolean(5);
-						boolean isWarnExempt = rs.getBoolean(6);
 						boolean isProtected = rs.getBoolean(7);
 						
 						UUID uuid = null;
